@@ -1,1 +1,490 @@
-/* You can add global styles to this file, and also import other style files */
+/************* BASE STYLES *************/
+* { box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.4; color: #364147; margin: 0; }
+input, button { font-family: inherit; font-size: inherit; }
+a { color: #ff0000; text-decoration: none; }
+ul { padding: 0; margin: 0; list-style: none; }
+nav { padding: 10px 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+/***************************************/
+body {
+  background: linear-gradient(to bottom, #fff0f0, #e1e1e1); /* Fondo degradado*/
+  /* Otros estilos */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #bdc2c4;
+  margin: 0;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  max-width: 900px; /* Ancho máximo de la cuadrícula */
+  margin: 0 auto; /* Centrar la cuadrícula horizontalmente */
+}
+.video-item {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+.video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para la descripción */
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease; /* Animación de transición */
+  transform: translateY(100%); /* Ocultar la descripción por defecto */
+}
+.video-item:hover .video-description {
+  transform: translateY(0); /* Mostrar la descripción al pasar el ratón sobre el video */
+}
+
+.container {
+  margin: 0 auto;
+
+  max-width: 1170px;
+}
+
+section {
+  display: flex;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-one {
+  flex: 1;
+}
+.align-center {
+  align-items: center;
+}
+.center {
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 6px 12px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+.btn-default {
+  color: white;
+  background-color: #840000;
+}
+.btn-primary {
+  color: white;
+  background-color: #840000;
+}
+.form-control {
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid #a0a0a0;
+  color: #8598a2;
+  line-height: 1.4;
+}
+.text-light {
+  font-size: 30px;
+  color: #ff0000;
+}
+.text-secondary {
+  font-size: 30px;
+  color: #ff2f2fe3;
+}
+.text-primary {
+  font-size: 16px;
+  color: #840000;
+}
+.header-nav {
+  border-bottom: 1px solid #a0a0a0; 
+}
+.brand {
+  width: 170px;
+  height: 85px;
+  margin-left: -15px;
+  margin-right: 60px;
+}
+
+.logo {
+  width: 100%; /* El logo ocupará todo el ancho del contenedor "brand" */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+}
+
+
+/* Estilo del contenedor del formulario */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo del botón de búsqueda */
+.search-button {
+  background-color: #a10000; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Eliminar borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color 0.9s ease; /* Efecto de transición suave */
+}
+
+.search-button:hover {
+  background-color: #ff0000; /* Cambiar color de fondo al pasar por encima */
+}
+
+/* Estilo de la caja de búsqueda */
+.search-box {
+  padding: 10px; /* Espaciado interno */
+  border: 3px solid #fe3d3d; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  width: 300px; /* Ancho */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: border-color 0.3s ease; /* Efecto de transición suave */
+}
+
+.search-box:focus {
+  border-color: #ff7e5f; /* Cambiar color del borde al obtener el foco */
+  outline: none; /* Eliminar borde de enfoque predeterminado */
+}
+
+.nav-list {
+  padding-left: 0;
+  width: 575px;
+  margin-top: 10px;
+}
+.nav-list li a {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+.profile {
+  margin-left: auto;
+}
+.account {
+  text-align: right;
+  padding: 15px;
+  color: #364147;
+  font-size: 18px;
+}
+.account a {
+  font-size: 14px;
+}
+.profile-pic {
+  width: 60px;
+  height: 60px;
+}
+.profile-pic img {
+  border-radius: 100px;
+  max-width: 100%;
+}
+.hero {
+  background-image: url('../img/hero.jpg');
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
+  text-transform: uppercase;
+}
+.hero h1 {
+  position: relative;
+  left: -30px;
+}
+.hero h2 {
+  color: #faa541;
+}
+.hero h1, .hero h2 {
+  font-size: 63px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+.hero p {
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 21px;
+  margin: 0 0 10px 0;
+}
+.banner {
+  margin: 55px 15px;
+  width: 100%;
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+  padding: 25px 0;
+}
+.banner img {
+  width: 250px;
+}
+.banner-text {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+}
+.banner-text > div:last-child {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.category {
+  flex: 0 0 25%;
+  padding: 0 15px;
+}
+.category img {
+  width: 100%;
+}
+.category-text {
+  color: #364147;
+  padding: 30px 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.category-text > div {
+  font-size: 16px;
+  font-weight: 200;
+  color: #ffe600;
+}
+.category-text h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.full-banner {
+  padding: 0 15px;
+  margin: 50px 0;
+  position: relative;
+}
+.full-banner:before {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff;
+  top: 30px;
+  bottom: 30px;
+  left: 50px;
+  right: 50px;
+  z-index: 1;
+}
+.full-banner-image {
+  flex: 0 0 58.333333%;
+  background-image: url('../img/vista.jpg');
+  background-size: cover;
+  background-position: top center;
+  min-height: 400px;
+}
+.full-banner-sidebar {
+  flex: 0 0 41.666667%;
+  background-color: #364147;
+  text-transform: uppercase;
+  padding: 30px;
+  color: white;
+}
+.full-banner-sidebar h4 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  color: #637f94;
+  line-height: 1;
+}
+.full-banner-sidebar h4:after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: #faa541;
+  margin: 20px auto;
+  display: block;
+}
+.full-banner-sidebar > div:nth-of-type(1) {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+}
+.full-banner-sidebar > div:nth-of-type(2) {
+  font-size: 25px;
+  font-weight: 200;
+  letter-spacing: 3px;
+}
+.full-banner-sidebar .btn.btn-default {
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 0;
+  min-height: 330px;
+  background-color: rgb(2, 1, 1);
+}
+footer:after {
+  content: "";
+  background-color: #2a2929;
+  width: 75%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.lists {
+  flex: 0 0 75%;
+  padding: 40px 15px;
+}
+.link-header {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+footer a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0 0 4px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.social ul li {
+  display: inline-block;
+}
+.social ul li a {
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-size: 23px 23px;
+  background-position: center;
+}
+.twitter {
+  background-image: url('../img/twitter.svg');
+}
+.facebook {
+  background-image: url('../img/facebook.svg');
+}
+.instagram {
+  background-image: url('../img/instagram.svg');
+}
+.pinterest {
+  background-image: url('../img/pinterest.svg');
+}
+.ps {
+  flex: 0 0 25%;
+  padding: 40px 0;
+  color: #e5e5e5;
+  font-size: 16px;
+}
+.ps img {
+  max-width: 230px;
+}
+.demo {
+  padding: 0 30px;
+}
+.demo:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  background: linear-gradient(to right,#f05a28 0,#e80a89 100%);
+}
+.copyright {
+  flex: 0 0 75%;
+  padding: 10px 0;
+  font-size: 12px;
+  text-align: center;
+}
+.newsletter .link-header {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.link-subheader{
+  color: #ffffff;
+}
+.newsletter .link-subheader {
+  color: #ffffff;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.newsletter input {
+  border: 1px solid #ff0000;
+  width: 200px;
+  margin-bottom: 10px;
+}
+.newsletter button {
+  width: 150px;
+  min-width: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#div_block-10-166 {
+  background-color: rgb(248, 45, 9);
+}
+
+
+/**
+* Estilos que vienen desde el archivo "Style.php"
+*/
+/* styles.css */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .video-item {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .video-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+  }
+  
+  .video-item:hover .video-description {
+    transform: translateY(0);
+  }
+  
